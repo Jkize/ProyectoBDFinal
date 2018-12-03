@@ -1,24 +1,59 @@
 package Modelo;
 
+import java.io.Serializable;
+
 /**
- * SEGUIIENTO V.1
+ * SEGUIIENTO V.2
  * 
  * @author Sebastian
  * @since 13-10-18
  */
 
-public class Seguimiento {
+public class Seguimiento implements Serializable{
 
+    private int codigo;
     private String Estado;
     private String HoraInicio;
     private String HoraFin;
     private String Observaciones; 
+    private Actividad actividad;
+    private Empleado empleado;
 
-    public Seguimiento(String Estado, String HoraInicio, String HoraFin, String Observaciones) {
+    public Seguimiento(int codigo, String Estado, String HoraInicio, String HoraFin, String Observaciones, Actividad actividad, Empleado empleado) {
+        this.codigo = codigo;
         this.Estado = Estado;
         this.HoraInicio = HoraInicio;
         this.HoraFin = HoraFin;
         this.Observaciones = Observaciones;
+        this.actividad = actividad;
+        this.empleado = empleado;
+    }
+
+    public Seguimiento(){
+    }
+    
+    public Actividad getActividad() {
+        return actividad;
+    }
+
+    public void setActividad(Actividad actividad) {
+        this.actividad = actividad;
+    }
+
+    public Empleado getEmpleado() {
+        return empleado;
+    }
+
+    public void setEmpleado(Empleado empleado) {
+        this.empleado = empleado;
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
 
     public String getEstado() {
@@ -52,5 +87,7 @@ public class Seguimiento {
     public void setObservaciones(String Observaciones) {
         this.Observaciones = Observaciones;
     }
-    
+
+   
+   
 }

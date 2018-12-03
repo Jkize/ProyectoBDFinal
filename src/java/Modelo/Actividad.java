@@ -1,62 +1,56 @@
 package Modelo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Jhoan Saavedra
  */
+public class Actividad implements Serializable{
 
-public class Actividad {
-
-    private Long codigo;
+    private int codigo;
     private String nombre;
-    private String descripcion;
-    private Empresa empresa;
-    private Categoria categoria;
-    private Servidor servidor;
     private String ejecucion;
-    private String IntervaloTiempo;
-    private String fechaEspecifica;
-
-    public String getFechaEspecifica() {
-        return fechaEspecifica;
-    }
-
-    public void setFechaEspecifica(String fechaEspecifica) {
-        this.fechaEspecifica = fechaEspecifica;
-    }
+    private int intervaloTiempo;
     private String horaInicio;
-    private Integer NroVecesDia;
-    private String diasFestivos;
-    private String urlManual;
-    private String urlVideo;
-    private Integer duracionEstimada;
+    private int nroVecesDia;
+    private String fechaEspecifica;
+    private String descripcion;
+    private String URLManual;
+    private String URLVideo;
+    private int duracionEst;
+    private Servidor servidor;
+    private Categoria categoria; 
+    private Empresa empresa;
 
-    public Actividad() {
+    public Actividad(int codigo) {
+        this.codigo = codigo;
     }
 
-    public Actividad(Long codigo, String nombre, String descripcion, Empresa empresa, Categoria categoria, Servidor servidor, String ejecucion, String IntervaloTiempo, String horaInicio, Integer NroVecesDia, String fechaEspecifica, String diasFestivos, String urlManual, String urlVideo, Integer duracionEstimada) {
+    public Actividad(int codigo, String nombre, String ejecucion, int intervaloTiempo, String horaInicio, int nroVecesDia, String fechaEspecifica, String descripcion, String URLManual, String URLVideo, int duracionEst, Servidor servidor, Categoria categoria, Empresa empresa) {
         this.codigo = codigo;
         this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.empresa = empresa;
-        this.categoria = categoria;
-        this.servidor = servidor;
         this.ejecucion = ejecucion;
-        this.IntervaloTiempo = IntervaloTiempo;
+        this.intervaloTiempo = intervaloTiempo;
         this.horaInicio = horaInicio;
-        this.NroVecesDia = NroVecesDia;
-        this.diasFestivos = diasFestivos;
-        this.urlManual = urlManual;
-        this.urlVideo = urlVideo;
-        this.duracionEstimada = duracionEstimada;
-        this.fechaEspecifica=fechaEspecifica;
+        this.nroVecesDia = nroVecesDia;
+        this.fechaEspecifica = fechaEspecifica;
+        this.descripcion = descripcion;
+        this.URLManual = URLManual;
+        this.URLVideo = URLVideo;
+        this.duracionEst = duracionEst;
+        this.servidor = servidor;
+        this.categoria = categoria;
+        this.empresa = empresa;
     }
 
-    public Long getCodigo() {
+    
+    
+    public int getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(Long codigo) {
+    public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
 
@@ -68,38 +62,6 @@ public class Actividad {
         this.nombre = nombre;
     }
 
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public Empresa getEmpresa() {
-        return empresa;
-    }
-
-    public void setEmpresa(Empresa empresa) {
-        this.empresa = empresa;
-    }
-
-    public Categoria getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
-    }
-
-    public Servidor getServidor() {
-        return servidor;
-    }
-
-    public void setServidor(Servidor servidor) {
-        this.servidor = servidor;
-    }
-
     public String getEjecucion() {
         return ejecucion;
     }
@@ -108,12 +70,12 @@ public class Actividad {
         this.ejecucion = ejecucion;
     }
 
-    public String getIntervaloTiempo() {
-        return IntervaloTiempo;
+    public int getIntervaloTiempo() {
+        return intervaloTiempo;
     }
 
-    public void setIntervaloTiempo(String IntervaloTiempo) {
-        this.IntervaloTiempo = IntervaloTiempo;
+    public void setIntervaloTiempo(int intervaloTiempo) {
+        this.intervaloTiempo = intervaloTiempo;
     }
 
     public String getHoraInicio() {
@@ -124,44 +86,79 @@ public class Actividad {
         this.horaInicio = horaInicio;
     }
 
-    public Integer getNroVecesDia() {
-        return NroVecesDia;
+    public int getNroVecesDia() {
+        return nroVecesDia;
     }
 
-    public void setNroVecesDia(Integer NroVecesDia) {
-        this.NroVecesDia = NroVecesDia;
+    public void setNroVecesDia(int nroVecesDia) {
+        this.nroVecesDia = nroVecesDia;
     }
 
-    public String getDiasFestivos() {
-        return diasFestivos;
+    public String getFechaEspecifica() {
+        return fechaEspecifica;
     }
 
-    public void setDiasFestivos(String diasFestivos) {
-        this.diasFestivos = diasFestivos;
+    public void setFechaEspecifica(String fechaEspecifica) {
+        this.fechaEspecifica = fechaEspecifica;
     }
 
-    public String getUrlManual() {
-        return urlManual;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setUrlManual(String urlManual) {
-        this.urlManual = urlManual;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
-    public String getUrlVideo() {
-        return urlVideo;
+    public String getURLManual() {
+        return URLManual;
     }
 
-    public void setUrlVideo(String urlVideo) {
-        this.urlVideo = urlVideo;
+    public void setURLManual(String URLManual) {
+        this.URLManual = URLManual;
     }
 
-    public Integer getDuracionEstimada() {
-        return duracionEstimada;
+    public String getURLVideo() {
+        return URLVideo;
     }
 
-    public void setDuracionEstimada(Integer duracionEstimada) {
-        this.duracionEstimada = duracionEstimada;
+    public void setURLVideo(String URLVideo) {
+        this.URLVideo = URLVideo;
     }
+
+    public int getDuracionEst() {
+        return duracionEst;
+    }
+
+    public void setDuracionEst(int duracionEst) {
+        this.duracionEst = duracionEst;
+    }
+
+    public Servidor getServidor() {
+        return servidor;
+    }
+
+    public void setServidor(Servidor servidor) {
+        this.servidor = servidor;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
+    }
+
+    
+    
 
 }

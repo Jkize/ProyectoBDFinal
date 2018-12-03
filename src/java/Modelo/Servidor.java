@@ -1,23 +1,31 @@
 package Modelo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Jhoan Saavedra
  */
 
-public class Servidor {
+public class Servidor implements Serializable{
 
     private Integer codigo;
-    private String nombre;
-    private Empresa empresa;
-
+    private String nombre; 
+    
+    public Servidor(Integer codigo) {
+        this.codigo = codigo;
+    }
+    
+    
+    
     public Servidor() {
     }
 
-    public Servidor(Integer codigo, String nombre, Empresa empresa) {
+    
+    public Servidor(Integer codigo, String nombre) {
         this.codigo = codigo;
         this.nombre = nombre;
-        this.empresa = empresa;
+       
     }
 
     public Integer getCodigo() {
@@ -35,13 +43,6 @@ public class Servidor {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
-    public Empresa getEmpresa() {
-        return empresa;
-    }
-
-    public void setEmpresa(Empresa empresa) {
-        this.empresa = empresa;
-    }
+ 
 
 }

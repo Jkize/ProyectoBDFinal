@@ -1,17 +1,20 @@
 package Modelo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Jhoan Saavedra
  */
 
-public class Empleado {
+public class Empleado implements Serializable{
 
     private String correo;
     private String nombre;
     private String contraseña;
     private String cargo;
     private Sede sede;
+    private String turno;
 
     public Empleado() {
     }
@@ -29,6 +32,16 @@ public class Empleado {
         this.nombre = nombre;
         this.contraseña = contraseña;
         this.cargo = cargo;
+    }
+
+    public Empleado(String correo,String nombre, String  turno) {
+      this.correo = correo;
+        this.nombre = nombre;
+      this.turno= turno;
+    }
+
+    public Empleado(String Correo) {
+    this.correo = Correo;
     }
 
     public String getCorreo() {
@@ -70,5 +83,15 @@ public class Empleado {
     public void setSede(Sede sede) {
         this.sede = sede;
     }
+
+    public String getTurno() {
+        return turno;
+    }
+
+    public void setTurno(String turno) {
+        this.turno = turno;
+    }
+    
+    
 
 }

@@ -1,11 +1,13 @@
 package Modelo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Jhoan Saavedra
  */
 
-public class Sede {
+public class Sede implements Serializable{
 
     private String codigo;
 
