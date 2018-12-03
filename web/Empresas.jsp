@@ -298,7 +298,7 @@
                                 <li><a href="javascript:void(0);"><i class="material-icons">shopping_cart</i>Sales</a></li>
                                 <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Likes</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="javascript:void(0);"><i class="material-icons">input</i>Sign Out</a></li>
+                                <li><a href="ServletLogin?Admin=1&idEmpleado=<%=emp1.getCorreo()%>"><i class="material-icons">input</i>Sign Out</a></li>
                             </ul>
                         </div>
                     </div>
