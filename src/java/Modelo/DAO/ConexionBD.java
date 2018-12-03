@@ -17,7 +17,7 @@ public class ConexionBD {
     private static Connection cn = null;
     private static String URLBD = "jdbc:mysql://localhost:3306/ProyectoBD";
     private static String usuario = "root";
-    private static String contrasena = "root";
+    private static String contrasena = "";
 
     public static Connection getConexion() throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
 
