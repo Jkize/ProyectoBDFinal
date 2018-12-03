@@ -373,7 +373,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="ServletCargaMActividades?inicio=1">
                                 <i class="material-icons">system_update_alt</i>
                                 <span>Carga Masiva de Actividades</span>
                             </a>

@@ -366,10 +366,28 @@
                                 <span>Busquedas</span>
                             </a>
                         </li>
+                        <li>
+                            <a href="ServletInformeMensual">
+                                <i class="material-icons">search</i>
+                                <span>Informe Mensual</span>
+                            </a>
+                        </li>
+                        <li >
+                            <a href="ServletInformeSemanal">
+                                <i class="material-icons">search</i>
+                                <span>Informe Semanal</span>
+                            </a>
+                        </li>
+                       <li>
+                            <a href="ServletCargaMActividades?inicio=1">
+                                <i class="material-icons">system_update_alt</i>
+                                <span>Carga Masiva de Actividades</span>
+                            </a>
+                        </li>
                         </aside>
                         <!-- #END# Left Sidebar -->
 
-                        <section class="content">
+                         <section class="content">
                             <div class="container-fluid">
 
                                 <div class="block-header">
@@ -383,7 +401,7 @@
                                     if (request.getAttribute("empleado") != null) {
                                         Empleado persona = (Empleado) request.getAttribute("empleado");
                                 %>  
-                                <form action="ServletRegistro?editar" method="POST">
+                                <form action="ServletRegistro" method="POST">
                                     <div class="row clearfix">
                                         <div class="col-sm-6">
                                             <div class="card">
@@ -416,10 +434,8 @@
                                                     <label>
                                                         Sede:
                                                         <select name="Sede_Operador" aria-controls="DataTables_Table_0" name="sede">
-                                                            <option value="10">Calle 100</option>
-                                                            <option value="25">Celta</option>
-                                                            <option value="50">1CAMAR</option>
-                                                            <option value="50">2MOVIS</option>
+                                                            <option value="calle 100">Calle 100</option>
+                                                            <option value="celta">Celta</option>
                                                         </select>
                                                     </label>
                                                 </div>
@@ -490,13 +506,13 @@
                                                         </table>
                                                     </div>
                                                     <div class="col-sm-2">
-                                                        <button type="button" class="btn bg-indigo waves-effect" name="buscar">Buscar</button>
+                                                        <button class="btn bg-indigo waves-effect" name="buscar">Buscar</button>
                                                         <h1></h1>
-                                                        <button type="button" class="btn bg-indigo waves-effect" name="ingresar">Ingresar</button>
+                                                        <button class="btn bg-indigo waves-effect" name="ingresar">Ingresar</button>
                                                         <h1> </h1>
-                                                        <button type="button" class="btn bg-indigo waves-effect" name="actualizar">Actualizar</button>
+                                                        <button class="btn bg-indigo waves-effect" name="actualizar">Actualizar</button>
                                                         <h1> </h1>
-                                                        <button type="button" class="btn bg-indigo waves-effect" name="eliminar">Eliminar</button>
+                                                        <button class="btn bg-indigo waves-effect" name="eliminar">Eliminar</button>
                                                     </div>
 
                                                 </div>
@@ -515,9 +531,25 @@
                                                         Operador.
                                                     </h2>
                                                     <br>
+                                                    <%
+                                                        if (request.getAttribute("empleadoEncontrado") != null) {
+                                                        Empleado emp = (Empleado) request.getAttribute("empleadoEncontrado");%>
                                                     <label>
                                                         Correo:
-                                                        <input type="search" class="form-control input-sm" placeholder="" aria-controls="DataTables_Table_0" name="correo">
+                                                        <input type="search" class="form-control input-sm" placeholder="" aria-controls="DataTables_Table_0" name="correo" value="<%=emp.getCorreo()%>">
+                                                    </label>
+                                                    <label>
+                                                        Nombre:
+                                                        <input type="search" class="form-control input-sm" placeholder="" aria-controls="DataTables_Table_0" name="nombre" value="<%=emp.getNombre()%>">
+                                                    </label>
+                                                    <label>
+                                                        Contraseña:
+                                                        <input type="search" class="form-control input-sm" placeholder="" aria-controls="DataTables_Table_0" name="contrasena"value="<%=emp.getContraseña()%>">
+                                                    </label>
+                                                    <%} else {%>
+                                                    <label>
+                                                        Correo:
+                                                        <input type="search" class="form-control input-sm" placeholder="" aria-controls="DataTables_Table_0" name="correo" value="No encontrado.">
                                                     </label>
                                                     <label>
                                                         Nombre:
@@ -527,6 +559,8 @@
                                                         Contraseña:
                                                         <input type="search" class="form-control input-sm" placeholder="" aria-controls="DataTables_Table_0" name="contrasena">
                                                     </label>
+                                                    <%}
+                                                    %>
                                                     <label>
                                                         Cargo:
                                                         <select name="Cargo_Operador" aria-controls="DataTables_Table_0">
@@ -539,10 +573,8 @@
                                                     <label>
                                                         Sede:
                                                         <select name="Sede_Operador" aria-controls="DataTables_Table_0" name="sede">
-                                                            <option value="10">Calle 100</option>
-                                                            <option value="25">Celta</option>
-                                                            <option value="50">1CAMAR</option>
-                                                            <option value="50">2MOVIS</option>
+                                                            <option value="calle100">Calle 100</option>
+                                                            <option value="Celta">Celta</option>
                                                         </select>
                                                     </label>
                                                 </div>
@@ -557,7 +589,7 @@
                                                     <br>
                                                     <label>
                                                         Correo:
-                                                    <input type="search" class="form-control input-sm" placeholder="" aria-controls="DataTables_Table_0" name="correo2">
+                                                        <input type="search" class="form-control input-sm" placeholder="" aria-controls="DataTables_Table_0" name="correo2">
                                                     </label>
                                                     <label>
                                                         Correo Operador Planta:
@@ -612,13 +644,13 @@
                                                         </table>
                                                     </div>
                                                     <div class="col-sm-2">
-                                                        <button type="button" class="btn bg-indigo waves-effect" name="buscar">Buscar</button>
+                                                        <button class="btn bg-indigo waves-effect" name="buscar">Buscar</button>
                                                         <h1></h1>
-                                                        <button type="button" class="btn bg-indigo waves-effect" name="ingresar">Ingresar</button>
+                                                        <button class="btn bg-indigo waves-effect" name="ingresar">Ingresar</button>
                                                         <h1> </h1>
-                                                        <button type="button" class="btn bg-indigo waves-effect" name="actualizar">Actualizar</button>
+                                                        <button class="btn bg-indigo waves-effect" name="actualizar">Actualizar</button>
                                                         <h1> </h1>
-                                                        <button type="button" class="btn bg-indigo waves-effect" name="eliminar">Eliminar</button>
+                                                        <button class="btn bg-indigo waves-effect" name="eliminar">Eliminar</button>
                                                     </div>
 
                                                 </div>
@@ -633,6 +665,7 @@
                             </div>
 
                         </section>
+
 
                         <!-- Jquery Core Js -->
                         <script src="plugins/jquery/jquery.min.js"></script>

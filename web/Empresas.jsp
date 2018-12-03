@@ -365,17 +365,203 @@
                                 <span>Informe Semanal</span>
                             </a>
                         </li>
+                        <li>
+                            <a href="ServletCargaMActividades?inicio=1">
+                                <i class="material-icons">system_update_alt</i>
+                                <span>Carga Masiva de Actividades</span>
+                            </a>
+                        </li>
                         </aside>
         <!-- #END# Left Sidebar -->
        
 
     <section class="content">
-        <div class="container-fluid">
-            <div class="block-header">
-                <h2>BLANK PAGE</h2>
-            </div>
-        </div>
-    </section>
+                        <div class="container-fluid">
+                            <div class="block-header">
+                                <h2>REGISTRO DE EMPRESA</h2>
+                            </div>
+
+                            <%
+                                if (request.getAttribute("listaEmpresas") != null) {%>
+                            <form action="ServletEmpresas" method="POST">
+                                <div class="row clearfix">
+                                    <div class="col-sm-12">
+                                        <div class="card">
+                                            <div class="header">
+                                                <%
+                                                    if (request.getAttribute("empresaEncontrada") != null) {
+                                                    Empresa emp = (Empresa) request.getAttribute("empresaEncontrada");%>
+                                                <label>
+                                                    Código:
+                                                </label>
+                                                <input type="search" class="form-control input-sm" placeholder="" aria-controls="DataTables_Table_0" name="codigo" value="<%=emp.getNombre() %>">
+
+                                                <br>
+                                                <label>
+                                                    Nombre de la empresa:
+                                                </label>
+                                                <input type="search" class="form-control input-sm" placeholder="" aria-controls="DataTables_Table_0" name="nombre" value="<%=emp.getCodigo()%>">
+
+                                                <%} else {%>
+                                                <label>
+                                                    Código:
+                                                </label>
+                                                <input type="search" class="form-control input-sm" placeholder="" aria-controls="DataTables_Table_0" name="codigo" value="No Encontrado.">
+
+                                                <br>
+                                                <label>
+                                                    Nombre de la empresa:
+                                                </label>
+                                                <input type="search" class="form-control input-sm" placeholder="" aria-controls="DataTables_Table_0" name="nombre">
+
+                                                <%}
+                                                %>
+
+                                                <br>
+                                                <label>
+                                                    Sede:
+                                                </label>
+                                                <select aria-controls="DataTables_Table_0" name="sede">
+                                                    <option value="10">Calle 100</option>
+                                                    <option value="25">Celta</option>
+                                                    <option value="50">1CAMAR</option>
+                                                    <option value="50">2MOVIS</option>
+                                                </select>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="container-fluid">
+                                    <div class="card">
+                                        <div class="body">
+                                            <div class="table-responsive">
+                                                <div class="col-sm-10">
+                                                    <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Código</th>
+                                                                <th>Nombre</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <%
+                                                                if (request.getAttribute("listaEmpleados") != null) {
+                                                                    ArrayList empresas = (ArrayList<Empresa>) request.getAttribute("listaEmpresas");
+                                                                    for (int i = 0; i < empresas.size(); i++) {
+                                                                        Empresa empleado = (Empresa) empresas.get(i);
+                                                            %>
+                                                            <tr>
+                                                                <td><%=empleado.getNombre()%></td>
+                                                                <td><%=empleado.getCodigo()%></td>
+                                                            </tr>
+                                                            <%
+                                                                    }
+                                                                }
+
+                                                            %> 
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    <button class="btn bg-indigo waves-effect" name="buscar">Buscar</button>
+                                                    <h1> </h1>
+                                                    <button class="btn bg-indigo waves-effect" name="ingresar">Ingresar</button>
+                                                    <h1> </h1>
+                                                    <button class="btn bg-indigo waves-effect" name="actualizar">Actualizar</button>
+                                                    <h1> </h1>
+                                                    <button class="btn bg-indigo waves-effect" name="eliminar">Eliminar</button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <%} else {%>
+                            <form action="ServletEmpresas" method="POST">
+                                <div class="row clearfix">
+                                    <div class="col-sm-12">
+                                        <div class="card">
+                                            <div class="header">
+                                                <label>
+                                                    Código:
+                                                </label>
+                                                <input type="search" class="form-control input-sm" placeholder="" aria-controls="DataTables_Table_0" name="codigo">
+
+                                                <br>
+                                                <label>
+                                                    Nombre de la empresa:
+                                                </label>
+                                                <input type="search" class="form-control input-sm" placeholder="" aria-controls="DataTables_Table_0" name="nombre">
+
+                                                <br>
+                                                <label>
+                                                    Sede:
+                                                </label>
+                                                <select aria-controls="DataTables_Table_0" name="sede">
+                                                    <option value="10">Calle 100</option>
+                                                    <option value="25">Celta</option>
+                                                    <option value="50">1CAMAR</option>
+                                                    <option value="50">2MOVIS</option>
+                                                </select>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="container-fluid">
+                                    <div class="card">
+                                        <div class="body">
+                                            <div class="table-responsive">
+                                                <div class="col-sm-10">
+                                                    <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Código</th>
+                                                                <th>Nombre</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <%
+                                                                if (request.getAttribute("listaEmpleados") != null) {
+                                                                    ArrayList empresas = (ArrayList<Empresa>) request.getAttribute("listaEmpresas");
+                                                                    for (int i = 0; i < empresas.size(); i++) {
+                                                                        Empresa empleado = (Empresa) empresas.get(i);
+                                                            %>
+                                                            <tr>
+                                                                <td><%=empleado.getNombre()%></td>
+                                                                <td><%=empleado.getCodigo()%></td>
+                                                            </tr>
+                                                            <%
+                                                                    }
+                                                                }
+
+                                                            %> 
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    <button class="btn bg-indigo waves-effect" name="buscar">Buscar</button>
+                                                    <h1> </h1>
+                                                    <button class="btn bg-indigo waves-effect" name="ingresar">Ingresar</button>
+                                                    <h1> </h1>
+                                                    <button class="btn bg-indigo waves-effect" name="actualizar">Actualizar</button>
+                                                    <h1> </h1>
+                                                    <button class="btn bg-indigo waves-effect" name="eliminar">Eliminar</button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <%}
+                            %>
+                        </div>
+                    </section>
 
     <!-- Jquery Core Js -->
     <script src="plugins/jquery/jquery.min.js"></script>

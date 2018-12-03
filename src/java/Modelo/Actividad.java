@@ -26,6 +26,8 @@ public class Actividad implements Serializable{
     public Actividad(int codigo) {
         this.codigo = codigo;
     }
+        public Actividad() {
+    }
 
     public Actividad(int codigo, String nombre, String ejecucion, int intervaloTiempo, String horaInicio, int nroVecesDia, String fechaEspecifica, String descripcion, String URLManual, String URLVideo, int duracionEst, Servidor servidor, Categoria categoria, Empresa empresa) {
         this.codigo = codigo;

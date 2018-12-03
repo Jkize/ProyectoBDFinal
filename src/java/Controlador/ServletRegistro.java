@@ -43,7 +43,6 @@ public class ServletRegistro extends HttpServlet {
             Logger.getLogger(ServletRegistro.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -66,14 +65,14 @@ public class ServletRegistro extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         RequestDispatcher rq = request.getRequestDispatcher("Registro.jsp");
+        RequestDispatcher rq = request.getRequestDispatcher("Registro.jsp");
         List<Empleado> emp = new ArrayList<>();
         try {
             emp = daoEmpleado.Obtener();
         } catch (SQLException ex) {
             Logger.getLogger(ServletRegistro.class.getName()).log(Level.SEVERE, null, ex);
         }
-        request.setAttribute("listaSedes", emp);
+        request.setAttribute("empleado", emp);
 
         rq.forward(request, response);
     }
@@ -89,33 +88,41 @@ public class ServletRegistro extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        RequestDispatcher rq = request.getRequestDispatcher("Registro.jsp");
         if(request.getParameter("buscar")!=null){
-            String correo = null;
-            
-            correo = request.getParameter("correo");
-            
-            if(correo != null && correo.length()>0){
-                try{
-                    Empleado empleado = new Empleado();
-                    empleado.setCorreo(correo);
-                    List<Empleado> empleados = this.daoEmpleado.Obtener();
-                    Empleado empleadito = empleados.get(empleados.indexOf(empleado));
-                    if(empleadito!=null){
-                        //
-                    }
-                }catch(Exception e){
-                    e.printStackTrace();
-                }
-            }
-            response.sendRedirect("ServlectRegistro");
-        }else if(request.getParameter("ingresar")!=null){
-            String correo = null, nombre = null, contraseña = null, cargo = null;
+            String correo = null, nombre = null, contrasena = null, cargo = null;
             String correoPlanta = null, fechaI = null, fechaF = null, turno = null;
             String sede = null;
             
             correo = request.getParameter("correo");
             nombre = request.getParameter("nombre");
-            contraseña = request.getParameter("contrasena");
+            contrasena = request.getParameter("contrasena");
+            cargo = request.getParameter("Cargo_Operador");
+            sede = request.getParameter("Sede_Operador");
+            
+            if(correo != null && correo.length()>0){
+                try{
+                    Empleado empleado = new Empleado(correo,nombre,contrasena,cargo,new Sede(sede));
+                    List<Empleado> empleados = this.daoEmpleado.Obtener();
+                    Empleado empleadito = empleados.get(empleados.indexOf(empleado));
+                    if(empleadito!=null){
+                        request.setAttribute("empleadoEncontrada", empleadito);
+                    }else{
+                        System.out.println("Empleado no encontrado.");
+                    }
+                }catch(Exception e){
+                    e.printStackTrace();
+                }
+            }
+            response.sendRedirect("Registro.jsp");
+        }else if(request.getParameter("ingresar")!=null){
+            String correo = null, nombre = null, contrasena = null, cargo = null;
+            String correoPlanta = null, fechaI = null, fechaF = null, turno = null;
+            String sede = null;
+            
+            correo = request.getParameter("correo");
+            nombre = request.getParameter("nombre");
+            contrasena = request.getParameter("contrasena");
             cargo = request.getParameter("Cargo_Operador");
             sede = request.getParameter("Sede_Operador");
             // // // // // // //
@@ -123,17 +130,22 @@ public class ServletRegistro extends HttpServlet {
             fechaI = request.getParameter("fechaI");
             fechaF = request.getParameter("fechaF");
             
-            if(correo!=null && nombre!=null && contraseña!=null && cargo!=null && correo.length()>0){
+            if(correo!=null && nombre!=null && contrasena!=null && cargo!=null && correo.length()>0){
                 try {
-                    Empleado empleado = new Empleado(correo,nombre,contraseña,cargo,new Sede(sede));
+                    Empleado empleado = new Empleado(correo,nombre,contrasena,cargo,new Sede(sede));
+                    System.out.println(correo);
+                    System.out.println(nombre);
+                    System.out.println(contrasena);
+                    System.out.println(cargo);
+                    System.out.println(sede);
                     if(!this.daoEmpleado.Crear(empleado)){
-                        System.out.println("Error.");
+                       System.out.println("Error.");
                     }
-                } catch (SQLException ex) {
+                } catch (Exception ex) {
                     ex.printStackTrace();
                 }
             }
-            response.sendRedirect("ServlectRegistro");
+            response.sendRedirect("Registro.jsp");
         }else if(request.getParameter("actualizar")!=null){
             String correo = null, nombre = null, contraseña = null, cargo = null;
             String sede = null;
@@ -158,6 +170,7 @@ public class ServletRegistro extends HttpServlet {
                     Logger.getLogger(ServletRegistro.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
+            response.sendRedirect("Registro.jsp");
         }else{//Eliminar
             String correo = null;
             correo = request.getParameter("correo");
@@ -172,6 +185,7 @@ public class ServletRegistro extends HttpServlet {
                     Logger.getLogger(ServletRegistro.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
+            response.sendRedirect("Registro.jsp");
         }
     }
 

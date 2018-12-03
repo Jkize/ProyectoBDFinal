@@ -48,6 +48,10 @@
         <servlet-name>ServletInformeMensual</servlet-name>
         <servlet-class>Controlador.ServletInformeMensual</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletCargaMActividades</servlet-name>
+        <servlet-class>Controlador.ServletCargaMActividades</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletTest</servlet-name>
         <url-pattern>/ServletTest</url-pattern>
@@ -95,6 +99,10 @@
     <servlet-mapping>
         <servlet-name>ServletInformeMensual</servlet-name>
         <url-pattern>/ServletInformeMensual</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletCargaMActividades</servlet-name>
+        <url-pattern>/ServletCargaMActividades</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -132,6 +132,54 @@ public class DAO__Actividad implements DAO<Actividad> {
 
     }
 
+    public boolean Crear2(Actividad t, String queryFinal) throws SQLException {
+        SimpleDateFormat sdf = new SimpleDateFormat("hh:mm");
+        SimpleDateFormat sdfdate = new SimpleDateFormat("yyyy-MM-dd");
+
+        boolean Resultado = false;
+        String query = queryFinal + "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?);";
+        PreparedStatement Smt = null;
+        try {
+            Smt = conexion.prepareStatement(query);
+
+            java.sql.Time time = new java.sql.Time(sdf.parse(t.getHoraInicio()).getTime());
+            Smt.setString(1, t.getNombre());
+            Smt.setString(2, t.getEjecucion());
+            Smt.setInt(3, t.getIntervaloTiempo());
+            Smt.setTime(4, time);
+            Smt.setInt(5, t.getNroVecesDia());
+            
+            if (t.getFechaEspecifica() == null) {
+                Smt.setDate(6, null);
+            } else {
+                java.sql.Date fechaSQL = new java.sql.Date(sdfdate.parse(t.getFechaEspecifica()).getTime());
+                Smt.setDate(6, fechaSQL);
+
+            }
+            
+            Smt.setString(7, t.getURLManual());
+            Smt.setString(8, t.getURLVideo());
+            Smt.setInt(9, t.getServidor().getCodigo());
+            Smt.setInt(10, t.getCategoria().getCodigo());
+            Smt.setInt(11, t.getDuracionEst());
+            Smt.setString(12, t.getDescripcion());
+            Smt.setInt(13, t.getEmpresa().getCodigo());
+
+            if (Smt.executeUpdate() > 0) {
+                Resultado = true;
+            }
+
+            Smt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ParseException ex) {
+            Logger.getLogger(DAO__Actividad.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return Resultado;
+
+    }
+    
     @Override
     public boolean Actualizar(Actividad t) throws SQLException {
         SimpleDateFormat sdf = new SimpleDateFormat("hh:mm");

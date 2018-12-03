@@ -386,6 +386,12 @@
                                 <span>Informe Semanal</span>
                             </a>
                         </li>
+                        <li>
+                            <a href="ServletCargaMActividades?inicio=1">
+                                <i class="material-icons">system_update_alt</i>
+                                <span>Carga Masiva de Actividades</span>
+                            </a>
+                        </li>
                         </aside>
                         <!-- #END# Left Sidebar -->
 
