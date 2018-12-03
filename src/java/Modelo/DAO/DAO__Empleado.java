@@ -105,6 +105,7 @@ public class DAO__Empleado implements DAO<Empleado>{
                 emp.setCorreo(rs.getString("correo"));
                 emp.setContraseña(rs.getString("contrasena"));
                 emp.setCargo(rs.getString("cargo"));
+                emp.setNombre(rs.getString("nombre"));
             }
 
         } catch (SQLException e) {
