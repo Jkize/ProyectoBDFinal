@@ -33,7 +33,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Jhoan Saavedra
  */
-public class ServlectBusquedas extends HttpServlet {
+public class ServletBusquedas extends HttpServlet {
 
     private DAO__Empresa dao_emp;
     private DAO__Servidor dao_serv;
@@ -42,7 +42,7 @@ public class ServlectBusquedas extends HttpServlet {
     private DAO__Empleado dao_emple;
     private Busqueda bus;
 
-    public ServlectBusquedas() throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public ServletBusquedas() throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         dao_emp = new DAO__Empresa();
         dao_serv = new DAO__Servidor();
@@ -92,7 +92,7 @@ public class ServlectBusquedas extends HttpServlet {
                 emple = dao_emple.Obtener();
 
             } catch (SQLException ex) {
-                Logger.getLogger(ServlectBusquedas.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletBusquedas.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             todo.add(emp);
@@ -138,7 +138,7 @@ public class ServlectBusquedas extends HttpServlet {
                 emple = dao_emple.Obtener();
 
             } catch (SQLException ex) {
-                Logger.getLogger(ServlectBusquedas.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletBusquedas.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             todo.add(emp);

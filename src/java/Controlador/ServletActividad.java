@@ -29,14 +29,14 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Jhoan Saavedra
  */
-public class ServlectActividad extends HttpServlet {
+public class ServletActividad extends HttpServlet {
 
     private DAO__Empresa dao_emp;
     private DAO__Servidor dao_serv;
     private DAO__Categoria dao_cat;
     private DAO__Actividad dao_acti;
 
-    public ServlectActividad() throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public ServletActividad() throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         dao_emp = new DAO__Empresa();
         dao_cat = new DAO__Categoria();
         dao_serv = new DAO__Servidor();

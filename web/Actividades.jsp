@@ -1,11 +1,16 @@
  
-<%@page import="Modelo.DAO.DAO__Empresa"%>
-<%@page import="Modelo.Empresa"%>
-<%@page import="Modelo.Categoria"%>
+<%@page import="Modelo.DAO.*"%>
+<%@page import="Modelo.*"%>
 <%@page import="java.util.*"%>
-<%@page import="Modelo.Servidor"%>
-<%@page import="Modelo.Actividad"%>
 
+<%
+    HttpSession sesion = request.getSession();
+    Empleado emp1 = (Empleado)sesion.getAttribute("Admin");
+    if( emp1 == null){
+      response.sendRedirect("index.jsp");
+    }else{ 
+
+%>
 
 <!DOCTYPE html>
 <html>
@@ -299,8 +304,8 @@
                         <img src="images/user.png" width="48" height="48" alt="User" />
                     </div>
                     <div class="info-container">
-                        <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
-                        <div class="email">john.doe@example.com</div>
+                        <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Administrador</div>
+                        <div class="email"><%=emp1.getCorreo()%></div>
                         <div class="btn-group user-helper-dropdown">
                             <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                             <ul class="dropdown-menu pull-right">
@@ -321,7 +326,7 @@
                     <ul class="list">
                         <li class="header">Menu</li>
                         <li>
-                            <a href="ServlectAdministrador">
+                            <a href="ServletAdministrador">
                                 <i class="material-icons">home</i>
                                 <span>Inicio</span>
                             </a>
@@ -334,35 +339,47 @@
                             </a>
                             <ul class="ml-menu">
                                 <li>
-                                    <a href="ServlectRegistro">Registro</a>
+                                    <a href="ServletRegistro">Registro</a>
                                 </li>
                                 <li>
-                                    <a href="ServlectAsignacionTurnos">Asignación de Turnos</a>
+                                    <a href="ServletAsignacionTurnos">Asignación de Turnos</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="active">
-                            <a href="ServlectActividad">
+                            <a href="ServletActividad">
                                 <i class="material-icons">assignment</i>
                                 <span>Actividades</span>
                             </a>
                         </li>
                         <li>
-                            <a href="ServlectEmpresas">
+                            <a href="ServletEmpresas">
                                 <i class="material-icons">group_work</i>
                                 <span>Empresas</span>
                             </a>
                         </li>
                         <li>
-                            <a href="ServlectServidoresCategorias">
+                            <a href="ServletServidoresCategorias">
                                 <i class="material-icons">layers</i>
                                 <span>Servidores - Categorias</span>
                             </a>
                         </li>
                         <li>
-                            <a href="ServlectBusquedas?inicio=1">
+                            <a href="ServletBusquedas?inicio=1">
                                 <i class="material-icons">search</i>
                                 <span>Busquedas</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="ServletInformeMensual">
+                                <i class="material-icons">search</i>
+                                <span>Informe Mensual</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="ServletInformeSemanal">
+                                <i class="material-icons">search</i>
+                                <span>Informe Semanal</span>
                             </a>
                         </li>
                         </aside>
@@ -372,7 +389,7 @@
                         <section class="content">
                             <div class="card">
 
-                                <form action="ServlectActividad" method="POST">
+                                <form action="ServletActividad" method="POST">
 
                                     <div class="container-fluid">
                                         <div class="block-header">
@@ -891,3 +908,4 @@
                         </body>
 
                         </html>
+                        <%}%>

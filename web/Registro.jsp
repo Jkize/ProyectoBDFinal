@@ -4,9 +4,20 @@
     Author     : Sebastian
 --%>
 
-<%@page import="java.util.ArrayList"%>
-<%@page import="Modelo.Empleado"%>
+<%@page import="Modelo.DAO.*"%>
+<%@page import="Modelo.*"%>
+<%@page import="java.util.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+
+<%
+    HttpSession sesion = request.getSession();
+    Empleado emp1 = (Empleado)sesion.getAttribute("Admin");
+    if( emp1 == null){
+      response.sendRedirect("index.jsp");
+    }else{ 
+
+%>
 <!DOCTYPE html>
 <!DOCTYPE html>
 <!DOCTYPE html>
@@ -311,7 +322,7 @@
                     <ul class="list">
                         <li class="header">Menu</li>
                         <li>
-                            <a href="ServlectAdministrador">
+                            <a href="ServletAdministrador">
                                 <i class="material-icons">home</i>
                                 <span>Inicio</span>
                             </a>
@@ -324,33 +335,33 @@
                             </a>
                             <ul class="ml-menu">
                                 <li>
-                                    <a href="ServlectRegistro">Registro</a>
+                                    <a href="ServletRegistro">Registro</a>
                                 </li>
                                 <li>
-                                    <a href="ServlectAsignacionTurnos">Asignación de Turnos</a>
+                                    <a href="ServletAsignacionTurnos">Asignación de Turnos</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="active">
-                            <a href="ServlectActividad">
+                            <a href="ServletActividad">
                                 <i class="material-icons">assignment</i>
                                 <span>Actividades</span>
                             </a>
                         </li>
                         <li>
-                            <a href="ServlectEmpresas">
+                            <a href="ServletEmpresas">
                                 <i class="material-icons">group_work</i>
                                 <span>Empresas</span>
                             </a>
                         </li>
                         <li>
-                            <a href="ServlectServidoresCategorias">
+                            <a href="ServletServidoresCategorias">
                                 <i class="material-icons">layers</i>
                                 <span>Servidores - Categorias</span>
                             </a>
                         </li>
                         <li>
-                            <a href="ServlectBusquedas?inicio=1">
+                            <a href="ServletBusquedas?inicio=1">
                                 <i class="material-icons">search</i>
                                 <span>Busquedas</span>
                             </a>
@@ -372,7 +383,7 @@
                                     if (request.getAttribute("empleado") != null) {
                                         Empleado persona = (Empleado) request.getAttribute("empleado");
                                 %>  
-                                <form action="ServlectRegistro?editar" method="POST">
+                                <form action="ServletRegistro?editar" method="POST">
                                     <div class="row clearfix">
                                         <div class="col-sm-6">
                                             <div class="card">
@@ -495,7 +506,7 @@
                                 </form>
                                 <%  } else {
                                 %> 
-                                <form action="ServlectRegistro" method="POST">
+                                <form action="ServletRegistro" method="POST">
                                     <div class="row clearfix">
                                         <div class="col-sm-6">
                                             <div class="card">
@@ -646,3 +657,4 @@
                         </body>
 
                         </html>
+                        <%}%>

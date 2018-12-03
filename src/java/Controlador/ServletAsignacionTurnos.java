@@ -26,7 +26,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Jhoan Saavedra
  */
-public class ServlectAsignacionTurnos extends HttpServlet {
+public class ServletAsignacionTurnos extends HttpServlet {
 
     private DAO__Sede dao;
     private Turnos daoTur;
@@ -37,13 +37,13 @@ public class ServlectAsignacionTurnos extends HttpServlet {
             this.dao = new DAO__Sede();
             this.daoTur = new Turnos();
         } catch (SQLException ex) {
-            Logger.getLogger(ServlectAsignacionTurnos.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ServletAsignacionTurnos.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ServlectAsignacionTurnos.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ServletAsignacionTurnos.class.getName()).log(Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            Logger.getLogger(ServlectAsignacionTurnos.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ServletAsignacionTurnos.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            Logger.getLogger(ServlectAsignacionTurnos.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ServletAsignacionTurnos.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -74,7 +74,7 @@ public class ServlectAsignacionTurnos extends HttpServlet {
         try {
             emp = dao.Obtener();
         } catch (SQLException ex) {
-            Logger.getLogger(ServlectActividad.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ServletActividad.class.getName()).log(Level.SEVERE, null, ex);
         }
         request.setAttribute("listaSedes", emp);
 
@@ -100,13 +100,13 @@ public class ServlectAsignacionTurnos extends HttpServlet {
             try {
                 emp = daoTur.TenerTurnos(sede);
             } catch (SQLException ex) {
-                Logger.getLogger(ServlectAsignacionTurnos.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletAsignacionTurnos.class.getName()).log(Level.SEVERE, null, ex);
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(ServlectAsignacionTurnos.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletAsignacionTurnos.class.getName()).log(Level.SEVERE, null, ex);
             } catch (InstantiationException ex) {
-                Logger.getLogger(ServlectAsignacionTurnos.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletAsignacionTurnos.class.getName()).log(Level.SEVERE, null, ex);
             } catch (IllegalAccessException ex) {
-                Logger.getLogger(ServlectAsignacionTurnos.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletAsignacionTurnos.class.getName()).log(Level.SEVERE, null, ex);
             }
             request.setAttribute("listaEmpleados", emp);
 
@@ -114,7 +114,7 @@ public class ServlectAsignacionTurnos extends HttpServlet {
             try {
                 sed = dao.Obtener();
             } catch (SQLException ex) {
-                Logger.getLogger(ServlectActividad.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletActividad.class.getName()).log(Level.SEVERE, null, ex);
             }
             request.setAttribute("listaSedes", sed);
 
@@ -128,7 +128,7 @@ public class ServlectAsignacionTurnos extends HttpServlet {
             try {
                 sed = dao.Obtener();
             } catch (SQLException ex) {
-                Logger.getLogger(ServlectActividad.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletActividad.class.getName()).log(Level.SEVERE, null, ex);
             }
             request.setAttribute("listaSedes", sed);
             
@@ -159,13 +159,13 @@ public class ServlectAsignacionTurnos extends HttpServlet {
                 try {
                     daoTur.InsertarTurnos(turnosNuevos);
                 } catch (SQLException ex) {
-                    Logger.getLogger(ServlectAsignacionTurnos.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(ServletAsignacionTurnos.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (ClassNotFoundException ex) {
-                    Logger.getLogger(ServlectAsignacionTurnos.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(ServletAsignacionTurnos.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (InstantiationException ex) {
-                    Logger.getLogger(ServlectAsignacionTurnos.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(ServletAsignacionTurnos.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (IllegalAccessException ex) {
-                    Logger.getLogger(ServlectAsignacionTurnos.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(ServletAsignacionTurnos.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
              rq.forward(request, response);

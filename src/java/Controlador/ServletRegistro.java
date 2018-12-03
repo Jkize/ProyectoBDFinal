@@ -26,7 +26,7 @@ import javax.servlet.RequestDispatcher;
  *
  * @author Jhoan Saavedra
  */
-public class ServlectRegistro extends HttpServlet {
+public class ServletRegistro extends HttpServlet {
     DAO__Empleado daoEmpleado;
     
     @Override
@@ -34,13 +34,13 @@ public class ServlectRegistro extends HttpServlet {
         try {
             this.daoEmpleado = new DAO__Empleado();
         } catch (SQLException ex) {
-            Logger.getLogger(ServlectRegistro.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ServletRegistro.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ServlectRegistro.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ServletRegistro.class.getName()).log(Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            Logger.getLogger(ServlectRegistro.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ServletRegistro.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            Logger.getLogger(ServlectRegistro.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ServletRegistro.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -71,7 +71,7 @@ public class ServlectRegistro extends HttpServlet {
         try {
             emp = daoEmpleado.Obtener();
         } catch (SQLException ex) {
-            Logger.getLogger(ServlectRegistro.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ServletRegistro.class.getName()).log(Level.SEVERE, null, ex);
         }
         request.setAttribute("listaSedes", emp);
 
@@ -155,7 +155,7 @@ public class ServlectRegistro extends HttpServlet {
                         this.daoEmpleado.Actualizar(empleadoE);
                     }
                 } catch (SQLException ex) {
-                    Logger.getLogger(ServlectRegistro.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(ServletRegistro.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         }else{//Eliminar
@@ -169,7 +169,7 @@ public class ServlectRegistro extends HttpServlet {
                     if(!this.daoEmpleado.Eliminar(empleado))
                         System.out.println("Eliminacion incorrecta.");
                 } catch (SQLException ex) {
-                    Logger.getLogger(ServlectRegistro.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(ServletRegistro.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         }

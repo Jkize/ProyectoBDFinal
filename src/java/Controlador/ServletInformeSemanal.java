@@ -48,7 +48,8 @@ public class ServletInformeSemanal extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+         RequestDispatcher rq = request.getRequestDispatcher("InformeSemanal.jsp");
+       rq.forward(request, response);
     }
 
     /**

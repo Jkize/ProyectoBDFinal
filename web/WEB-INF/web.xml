@@ -5,36 +5,36 @@
         <servlet-class>Controlador.ServletTest</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ServlectActividad</servlet-name>
-        <servlet-class>Controlador.ServlectActividad</servlet-class>
+        <servlet-name>ServletActividad</servlet-name>
+        <servlet-class>Controlador.ServletActividad</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ServlectAdministrador</servlet-name>
-        <servlet-class>Controlador.ServlectAdministrador</servlet-class>
+        <servlet-name>ServletAdministrador</servlet-name>
+        <servlet-class>Controlador.ServletAdministrador</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ServlectAsignacionTurnos</servlet-name>
-        <servlet-class>Controlador.ServlectAsignacionTurnos</servlet-class>
+        <servlet-name>ServletAsignacionTurnos</servlet-name>
+        <servlet-class>Controlador.ServletAsignacionTurnos</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ServlectBusquedas</servlet-name>
-        <servlet-class>Controlador.ServlectBusquedas</servlet-class>
+        <servlet-name>ServletBusquedas</servlet-name>
+        <servlet-class>Controlador.ServletBusquedas</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ServlectEmpresas</servlet-name>
-        <servlet-class>Controlador.ServlectEmpresas</servlet-class>
+        <servlet-name>ServletEmpresas</servlet-name>
+        <servlet-class>Controlador.ServletEmpresas</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ServlectLogin</servlet-name>
-        <servlet-class>Controlador.ServlectLogin</servlet-class>
+        <servlet-name>ServletLogin</servlet-name>
+        <servlet-class>Controlador.ServletLogin</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ServlectRegistro</servlet-name>
-        <servlet-class>Controlador.ServlectRegistro</servlet-class>
+        <servlet-name>ServletRegistro</servlet-name>
+        <servlet-class>Controlador.ServletRegistro</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ServlectServidoresCategorias</servlet-name>
-        <servlet-class>Controlador.ServlectServidoresCategorias</servlet-class>
+        <servlet-name>ServletServidoresCategorias</servlet-name>
+        <servlet-class>Controlador.ServletServidoresCategorias</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ServletActividadOp</servlet-name>
@@ -53,36 +53,36 @@
         <url-pattern>/ServletTest</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ServlectAdministrador</servlet-name>
-        <url-pattern>/ServlectAdministrador</url-pattern>
+        <servlet-name>ServletAdministrador</servlet-name>
+        <url-pattern>/ServletAdministrador</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ServlectAsignacionTurnos</servlet-name>
-        <url-pattern>/ServlectAsignacionTurnos</url-pattern>
+        <servlet-name>ServletAsignacionTurnos</servlet-name>
+        <url-pattern>/ServletAsignacionTurnos</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ServlectBusquedas</servlet-name>
-        <url-pattern>/ServlectBusquedas</url-pattern>
+        <servlet-name>ServletBusquedas</servlet-name>
+        <url-pattern>/ServletBusquedas</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ServlectEmpresas</servlet-name>
-        <url-pattern>/ServlectEmpresas</url-pattern>
+        <servlet-name>ServletEmpresas</servlet-name>
+        <url-pattern>/ServletEmpresas</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ServlectLogin</servlet-name>
-        <url-pattern>/ServlectLogin</url-pattern>
+        <servlet-name>ServletLogin</servlet-name>
+        <url-pattern>/ServletLogin</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ServlectRegistro</servlet-name>
-        <url-pattern>/ServlectRegistro</url-pattern>
+        <servlet-name>ServletRegistro</servlet-name>
+        <url-pattern>/ServletRegistro</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ServlectActividad</servlet-name>
-        <url-pattern>/ServlectActividad</url-pattern>
+        <servlet-name>ServletActividad</servlet-name>
+        <url-pattern>/ServletActividad</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ServlectServidoresCategorias</servlet-name>
-        <url-pattern>/ServlectServidoresCategorias</url-pattern>
+        <servlet-name>ServletServidoresCategorias</servlet-name>
+        <url-pattern>/ServletServidoresCategorias</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ServletActividadOp</servlet-name>

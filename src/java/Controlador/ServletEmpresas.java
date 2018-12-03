@@ -17,9 +17,9 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Jhoan Saavedra
  */
-public class ServlectLogin extends HttpServlet {
+public class ServletEmpresas extends HttpServlet {
 
-     
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -33,7 +33,7 @@ public class ServlectLogin extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        RequestDispatcher rq = request.getRequestDispatcher("Login.jsp");
+         RequestDispatcher rq = request.getRequestDispatcher("Empresas.jsp");
        
        rq.forward(request, response);
     }
@@ -49,7 +49,7 @@ public class ServlectLogin extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         RequestDispatcher rq = request.getRequestDispatcher("index.jsp");
+      RequestDispatcher rq = request.getRequestDispatcher("Empresas.jsp");
        
        rq.forward(request, response);
     }

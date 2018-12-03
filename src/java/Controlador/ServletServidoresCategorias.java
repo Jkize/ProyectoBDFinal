@@ -26,7 +26,7 @@ import org.json.*;
  *
  * @author Jhoan Saavedra
  */
-public class ServlectServidoresCategorias extends HttpServlet {
+public class ServletServidoresCategorias extends HttpServlet {
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -70,15 +70,15 @@ public class ServlectServidoresCategorias extends HttpServlet {
             rq.forward(request, response);
 
         } catch (SQLException ex) {
-            Logger.getLogger(ServlectServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ServletServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ServlectServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ServletServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            Logger.getLogger(ServlectServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ServletServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            Logger.getLogger(ServlectServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ServletServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
         } catch (JSONException ex) {
-            Logger.getLogger(ServlectServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ServletServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
@@ -131,13 +131,13 @@ public class ServlectServidoresCategorias extends HttpServlet {
             } catch (SQLException ex) {
                 out.println("{\"error\":\"Error SQL\"}");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(ServlectServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
             } catch (InstantiationException ex) {
-                Logger.getLogger(ServlectServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
             } catch (IllegalAccessException ex) {
-                Logger.getLogger(ServlectServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
             } catch (JSONException ex) {
-                Logger.getLogger(ServlectServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         }
@@ -158,13 +158,13 @@ public class ServlectServidoresCategorias extends HttpServlet {
             } catch (SQLException ex) {
                 out.println("{\"error\":\"Error SQL\"}");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(ServlectServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
             } catch (InstantiationException ex) {
-                Logger.getLogger(ServlectServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
             } catch (IllegalAccessException ex) {
-                Logger.getLogger(ServlectServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
             } catch (JSONException ex) {
-                Logger.getLogger(ServlectServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         if (BbuscarC != null) {
@@ -183,13 +183,13 @@ public class ServlectServidoresCategorias extends HttpServlet {
             } catch (SQLException ex) {
                 out.println("{\"error\":\"Error SQL\"}");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(ServlectServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
             } catch (InstantiationException ex) {
-                Logger.getLogger(ServlectServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
             } catch (IllegalAccessException ex) {
-                Logger.getLogger(ServlectServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
             } catch (JSONException ex) {
-                Logger.getLogger(ServlectServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
             } catch (NumberFormatException e) {
                 out.println("{\"error\":\"El codigo debe ser un número\"}");
             }
@@ -210,13 +210,13 @@ public class ServlectServidoresCategorias extends HttpServlet {
             } catch (SQLException ex) {
                 out.println("{\"error\":\"Error SQL\"}");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(ServlectServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
             } catch (InstantiationException ex) {
-                Logger.getLogger(ServlectServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
             } catch (IllegalAccessException ex) {
-                Logger.getLogger(ServlectServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
             } catch (JSONException ex) {
-                Logger.getLogger(ServlectServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
             } catch (NumberFormatException e) {
                 out.println("{\"error\":\"El codigo debe ser un número\"}");
             }
@@ -238,13 +238,13 @@ public class ServlectServidoresCategorias extends HttpServlet {
             } catch (SQLException ex) {
                 out.println("{\"error\":\"Error SQL\"}");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(ServlectServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
             } catch (InstantiationException ex) {
-                Logger.getLogger(ServlectServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
             } catch (IllegalAccessException ex) {
-                Logger.getLogger(ServlectServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
             } catch (JSONException ex) {
-                Logger.getLogger(ServlectServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
             } catch (NumberFormatException e) {
                 out.println("{\"error\":\"El codigo debe ser un número\"}");
             }
@@ -267,13 +267,13 @@ public class ServlectServidoresCategorias extends HttpServlet {
             } catch (SQLException ex) {
                 out.println("{\"error\":\"Error SQL\"}");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(ServlectServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
             } catch (InstantiationException ex) {
-                Logger.getLogger(ServlectServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
             } catch (IllegalAccessException ex) {
-                Logger.getLogger(ServlectServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
             } catch (JSONException ex) {
-                Logger.getLogger(ServlectServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
             } catch (NumberFormatException e) {
                 out.println("{\"error\":\"El codigo debe ser un número\"}");
             }
@@ -293,13 +293,13 @@ public class ServlectServidoresCategorias extends HttpServlet {
             } catch (SQLException ex) {
                 out.println("{\"error\":\"Error SQL\"}");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(ServlectServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
             } catch (InstantiationException ex) {
-                Logger.getLogger(ServlectServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
             } catch (IllegalAccessException ex) {
-                Logger.getLogger(ServlectServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
             } catch (JSONException ex) {
-                Logger.getLogger(ServlectServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
             } catch (NumberFormatException e) {
                 out.println("{\"error\":\"El codigo debe ser un número\"}");
             }
@@ -320,13 +320,13 @@ public class ServlectServidoresCategorias extends HttpServlet {
             } catch (SQLException ex) {
                 out.println("{\"error\":\"Error SQL\"}");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(ServlectServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
             } catch (InstantiationException ex) {
-                Logger.getLogger(ServlectServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
             } catch (IllegalAccessException ex) {
-                Logger.getLogger(ServlectServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
             } catch (JSONException ex) {
-                Logger.getLogger(ServlectServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServletServidoresCategorias.class.getName()).log(Level.SEVERE, null, ex);
             } catch (NumberFormatException e) {
                 out.println("{\"error\":\"El codigo debe ser un número\"}");
             }

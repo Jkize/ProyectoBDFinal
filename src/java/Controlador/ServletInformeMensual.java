@@ -33,7 +33,8 @@ public class ServletInformeMensual extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        RequestDispatcher rq = request.getRequestDispatcher("InformeMensual.jsp");
+       rq.forward(request, response);
     }
 
     /**

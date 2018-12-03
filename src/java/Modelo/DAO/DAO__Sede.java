@@ -47,6 +47,25 @@ public class DAO__Sede implements DAO<Sede>{
         return sedes;
     }
 
+    public Sede Buscar(String codigo) throws SQLException {
+        Sede sede = null;
+        String query = "SELECT * FROM Sede WHERE codigo=" + codigo;
+        try {
+            Statement st = conexion.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            while (rs.next()) {
+                sede = new Sede();
+                sede.setCodigo(rs.getString("codigo"));
+            }
+            st.close();
+        } catch (SQLException e) {
+            System.out.println("Problemas al obtener la lista de Empleados");
+            e.printStackTrace();
+        }
+
+        return sede;
+
+    }
     @Override
     public boolean Crear(Sede t) throws SQLException {
         boolean result=false;

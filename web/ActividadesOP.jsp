@@ -5,8 +5,19 @@
 --%>
 
 
-
+<%@page import="Modelo.DAO.*"%>
+<%@page import="Modelo.*"%>
+<%@page import="java.util.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%
+    HttpSession sesion = request.getSession();
+    Empleado emp1 = (Empleado)sesion.getAttribute("Admin");
+    if( emp1 == null){
+      response.sendRedirect("index.jsp");
+    }else{ 
+
+%>
 <!DOCTYPE html>
 <html>
 
@@ -309,7 +320,7 @@
 
                       
                         <li class="active">
-                            <a href="ServlectActividad">
+                            <a href="ServletActividadOp">
                                 <i class="material-icons">assignment</i>
                                 <span>Actividades</span>
                             </a>
@@ -453,3 +464,4 @@
                         </body>
 
                         </html>
+                        <%}%>

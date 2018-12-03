@@ -1,7 +1,6 @@
 package Modelo.DAO;
 
-import Modelo.Empleado;
-import Modelo.Sede;
+import Modelo.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -22,9 +21,11 @@ import java.util.logging.Logger;
 public class DAO__Empleado implements DAO<Empleado>{
 
     private final Connection conexion;
-
+    private DAO__Sede daosed;
+    
     public DAO__Empleado() throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         conexion = ConexionBD.getConexion();
+        daosed= new DAO__Sede();
     }
     
     @Override
@@ -65,6 +66,55 @@ public class DAO__Empleado implements DAO<Empleado>{
 
         return empleados;}
 
+    public Empleado Buscar(String correo) throws SQLException {
+        Empleado emple = null;
+        String query = "SELECT * FROM Empleado WHERE correo=" + correo;
+        try {
+            Statement st = conexion.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            while (rs.next()) {
+                emple = new Empleado();
+                emple.setCorreo(rs.getString("correo"));
+                emple.setNombre(rs.getString("Nombre"));
+                emple.setSede(daosed.Buscar(rs.getString("Nombre")));
+                emple.setTurno(rs.getString("Turno"));
+                emple.setContraseña(rs.getString("Contrasena"));
+                emple.setCargo(rs.getString("Cargo"));
+            }
+            st.close();
+        } catch (SQLException e) {
+            System.out.println("Problemas al obtener la lista de Empleados");
+            e.printStackTrace();
+        }
+
+        return emple;
+
+    }
+    
+    public Empleado usuarioValido(Empleado empleado) throws ClassNotFoundException {
+        System.out.println(empleado.getCorreo()+" "+empleado.getContraseña());
+        Empleado emp = null;
+        try {
+            PreparedStatement Smt = conexion.prepareStatement("select * from Empleado where correo=? AND contrasena=?");
+            Smt.setString(1, empleado.getCorreo());
+            Smt.setString(2, empleado.getContraseña());
+            ResultSet rs = Smt.executeQuery();
+            if (rs.next()) {
+                System.out.println("Entra a validar USUARIO1");
+                emp = new Empleado();
+                emp.setCorreo(rs.getString("correo"));
+                emp.setContraseña(rs.getString("contrasena"));
+                emp.setCargo(rs.getString("cargo"));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return emp;
+
+    }
+    
     @Override
     public boolean Crear(Empleado t) throws SQLException {
    boolean result=false;

@@ -1,7 +1,7 @@
 <%-- 
     Document   : index
     Created on : 2/12/2018, 12:49:21 AM
-    Author     : Sebastian-
+    Author     : Sebastian----
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -51,7 +51,7 @@
                         		</div>
                             </div>
                             <div class="form-bottom">
-			                    <form role="form" action="" method="post" class="login-form">
+			                    <form role="form" action="ServletLogin" method="post" class="login-form">
 			                    	<div class="form-group">
 			                    		<label class="sr-only" for="form-username">Username</label>
 			                        	<input type="text" name="form-username" placeholder="Username" class="form-username form-control" id="form-username">
